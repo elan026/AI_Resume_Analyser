@@ -1,0 +1,64 @@
+🚀 Project Overview
+
+We’ll build a web app where:
+
+Users upload their resume (.pdf or .docx).
+
+AI extracts text & parses sections (Education, Experience, Skills, Projects, etc.).
+
+LLM (via LangChain) evaluates resume against job description or general ATS criteria.
+
+Streamlit displays analysis:
+
+ATS Score
+
+Missing Keywords
+
+Suggestions for improvement
+
+Strengths & Weaknesses
+
+🛠 Tech Stack (2025 Relevant)
+
+Frontend & UI → Streamlit
+ (simple & interactive UI)
+
+Backend Orchestration → LangChain
+ (chains, prompts, parsing)
+
+LLM Provider → OpenAI GPT-4.1, Anthropic Claude 3.5, or local LLM via Ollama
+
+Document Processing →
+
+PyPDF2 / pdfplumber for PDFs
+
+python-docx for .docx
+
+Vector Store (optional for JD–resume matching) → FAISS / Chroma
+
+Embeddings → text-embedding-3-large (OpenAI) or Instructor Embeddings
+
+Environment → Python 3.11+, pipenv / poetry
+
+📂 Project Structure
+resume-analyser/
+│── app.py                # Streamlit main app
+│── chains/
+│   └── resume_chain.py   # LangChain prompt + pipeline
+│── utils/
+│   ├── file_parser.py    # Extract text from resume
+│   └── scorer.py         # ATS scoring logic
+│── requirements.txt
+│── README.md
+
+🔑 Core Features
+
+Upload Resume (PDF/DOCX)
+
+Extract Text → Parse Education, Skills, Projects
+
+ATS Analysis → Compare with Job Description (optional input)
+
+LLM Feedback → Strengths, Weaknesses, Improvements
+
+ATS Score → 0–100 scale
